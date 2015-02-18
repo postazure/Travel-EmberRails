@@ -1,0 +1,10 @@
+POSTS
+
+{{input value=name type=text placeholder="Name..."}}
+{{input value=description type=text placeholder="Description..."}}
+{{input value=photo type=text placeholder="Photo Url"}}
+<button {{action "createPost"}}>Create Post</button>
+
+{{#each post in model}}
+  <div>{{post.name}} <span class="delete-btn" {{action "deletePost" post}}>[X]</span></div>
+{{/each}}
