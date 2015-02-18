@@ -1,10 +1,12 @@
-POSTS
-
-{{input value=name type=text placeholder="Name..."}}
-{{input value=description type=text placeholder="Description..."}}
-{{input value=photo type=text placeholder="Photo Url"}}
-<button {{action "createPost"}}>Create Post</button>
 
 {{#each post in model}}
-  <div>{{post.name}} <span class="delete-btn" {{action "deletePost" post}}>[X]</span></div>
+  <div>{{#link-to "posts.show" post}}{{post.name}}{{/link-to}}
+    {{#link-to "posts.edit" post}}[E]{{/link-to}}
+    <span class="span-btn" {{action "deletePost" post}}>[X]</span>
+  </div>
 {{/each}}
+
+{{#link-to "posts.new"}}New Post{{/link-to}}
+
+
+{{outlet}}

@@ -1,0 +1,10 @@
+EDIT POST
+
+{{input value=model.name type=text placeholder="Name..."}}
+{{input value=model.description type=text placeholder="Description..."}}
+{{input value=model.photo type=text placeholder="Photo Url"}}
+
+
+<button {{action "updatePost" model}}>Update Post</button>
+{{#link-to "posts"}}Cancel{{/link-to}}
+
