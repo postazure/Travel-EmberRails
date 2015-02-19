@@ -1,12 +1,17 @@
 
-{{#each post in model}}
-  <div>{{#link-to "posts.show" post}}{{post.name}}{{/link-to}}
-    {{#link-to "posts.edit" post}}[E]{{/link-to}}
-    <span class="span-btn" {{action "deletePost" post}}>[X]</span>
-  </div>
-{{/each}}
+<div class="ui secondary vertical menu">
+  {{#each post in model}}
+  
+    {{#link-to "posts.show" post class="item"}}
+      {{post.name}}
+      <i class="remove icon" {{action "deletePost" post}}></i>
+    {{/link-to}} 
+  {{/each}}
+  
+</div>
 
 {{#link-to "posts.new"}}New Post{{/link-to}}
+<div>{{outlet}}</div>
 
 
-{{outlet}}
+

@@ -1,5 +1,9 @@
-<h3>{{name}}</h3>
+<h3>
+  {{name}}
+  {{#link-to "posts.edit" model}}<i class="pencil icon" ></i>{{/link-to}}
+</h3>
 
 <p>{{description}}</p>
 
 
+<img {{bind-attr src=photo}} class="ui medium rounded image" alt="">
